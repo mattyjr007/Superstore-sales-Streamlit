@@ -6,3 +6,4 @@ streamlit
 millify
 streamlit_extras 
 altair
+xlrd
