@@ -1,2 +1,4 @@
 # Superstore-sales-Streamlit
-Super store sales streamlit interactive dashboard
+Superstore Sales streamlit interactive dashboard
+
+
