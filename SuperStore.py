@@ -205,7 +205,29 @@ with dash_4:
 
         st.plotly_chart(fig, use_container_width=True)
 
-  
+    with col2:
+        custom_colors = {'Furniture': '#005C53', 'Office Supplies': '#9FC131', 'Technology': '#042940'}
+
+
+        bars = alt.Chart(df).mark_bar().encode(
+            y=alt.Y('sum(Sales):Q', stack='zero', axis=alt.Axis(format='~s') ),
+            x=alt.X('year:N'),
+            #color=alt.Color('Category')
+            color=alt.Color('Category:N', scale=alt.Scale(domain=list(custom_colors.keys()), range=list(custom_colors.values())))
+
+        )
+
+        text = alt.Chart(df).mark_text(dx=-15, dy=30, color='white').encode(
+             y=alt.Y('sum(Sales):Q', stack='zero', axis=alt.Axis(format='~s') ),
+            x=alt.X('year:N'),
+            detail='Category:N',
+            text=alt.Text('sum(Sales):Q', format='~s')
+          )
+
+        chart = bars + text
+
+        chart = chart.properties(title="Sales trends for Product Categories over the years" )
+      
 
         st.altair_chart(chart,use_container_width=True)
 
