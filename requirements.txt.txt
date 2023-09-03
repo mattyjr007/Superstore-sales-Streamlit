@@ -1,4 +1,5 @@
 pandas
+openpyxl
 numpy
 plotly
 streamlit
