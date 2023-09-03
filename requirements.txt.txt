@@ -1,0 +1,7 @@
+pandas
+numpy
+plotly
+streamlit
+millify
+streamlit_extras 
+altair
